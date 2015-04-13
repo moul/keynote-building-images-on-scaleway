@@ -72,6 +72,8 @@ RUN apt-get install -y -qq cowsay
 COPY ./patches/ /
 ```
 
+![right fit](assets/image-helloworld.png)
+
 ---
 
 ![right fit](assets/make-build.png)
