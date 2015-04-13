@@ -22,8 +22,6 @@ slidenumbers: true
 
 ---
 
-# Video
-
 ![](https://www.youtube.com/watch?v=XFhgSKNJP2s)
 
 ---
@@ -32,13 +30,18 @@ slidenumbers: true
 
 - *distrib images*: Ubuntu, Debian, Fedora, Arch Linux, Gentoo, Alpine Linux ...
 - *1-Click apps*: Docker, Wordpress, OwnCloud, Pydio, LEMP, Python, Node.js ...
-- *community images*: Coming soon ...
+
+--
+
+*coming soon*: community images
+
+![right fit](assets/imagehub.png)
 
 ---
 
 # Our Needs
 
-- *Write*/*Build*/*Test* images
+- *Write*/*Build*/*Test*/*Git* image definitions
 - Encourage *contributions*
 
 ---
@@ -69,7 +72,7 @@ COPY ./patches/ /
 
 ---
 
-![right](assets/make-build.png)
+![right fit](assets/make-build.png)
 
 # Let's Build
 
@@ -101,6 +104,8 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 ```
 
 ---
+
+![right fit](assets/make-help.png)
 
 # Pros :ok_hand:
 
@@ -138,3 +143,7 @@ $ git commit -am 'Added cool feature. :neckbeard:'
 ---
 
 # Questions?
+
+scaleway.com
+github.com/scaleway
+twitter.com/scaleway
