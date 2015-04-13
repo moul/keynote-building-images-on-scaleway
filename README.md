@@ -121,7 +121,7 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 - *inheritance*: images apps are simple and concise
 - *caching*: incrementally build images
 - *debug*: drop a shell in the future image thanks to `docker run`
-- *pull/push*: sources are on GitHub, buils are on registries
+- *pull/push*: sources are on GitHub, builds are on registries
 
 ---
 
