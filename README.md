@@ -41,7 +41,7 @@ slidenumbers: true
 
 # Our Needs
 
-- *Write*/*Build*/*Test*/*Git* image definitions
+- *write*/*build*/*test*/*commit* images
 - Encourage *contributions*
 
 ---
@@ -54,6 +54,8 @@ slidenumbers: true
   *RUN apt-get install ...*
 3. convert it to Scaleway image
   *$ make build*
+
+![right zoom=100%](assets/docker-image-to-scaleway-image.png)
 
 ---
 
