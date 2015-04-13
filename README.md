@@ -1,73 +1,102 @@
-# Building Images for Scaleway
+footer: While42 Paris - by [@moul](https://twitter.com/moul) & [@aimxhaisse](https://twitter.com/aimxhaisse)
+slidenumbers: true
 
-@moul @aimxhaisse
+# [fit] Building images for **Scaleway**
+
+![](assets/image-board.jpg)
 
 ---
 
-![right](assets/image-board.jpg)
+![](assets/image-board.jpg)
+![right fit](assets/node.png)
 
 # Who We Are
 
-
 - BareMetal SSD cloud servers
 - Compute C1
-	- 4 dedicated ARM cores
-	- 2GB memory
-	- 50GB SSD Disk
-	- 1 public IPv4 address
-	- 200Mbits/s unmetered bandwidth
+  - 4 dedicated ARM cores
+  - 2GB memory
+  - 50GB SSD Disk
+  - 1 public IPv4 address
+  - 200Mbits/s unmetered bandwidth
 
 ---
 
-# Example of Images
+# Video
 
-- Base images: Ubuntu, Debian, Fedora, ArchLinux, Gentoo, ...
-- App images: Wordpress, OwnCloud, Pydio, LEMP, ...
+![](https://www.youtube.com/watch?v=XFhgSKNJP2s)
+
+---
+
+# Example of images
+
+- *distrib images*: Ubuntu, Debian, Fedora, Arch Linux, Gentoo, Alpine Linux ...
+- *1-Click apps*: Docker, Wordpress, OwnCloud, Pydio, LEMP, Python, Node.js ...
+- *community images*: Coming soon ...
 
 ---
 
 # Our Needs
 
-- Write/Build/Test images
-- Encourage contributions
+- *Write*/*Build*/*Test* images
+- Encourage *contributions*
 
 ---
 
 # The Docker Way
 
-- we ported base images to armhf
-- we inherit from these base images to build apps
+1. inherit from a Docker image
+  *FROM my-arm-image*
+2. customize
+  *RUN apt-get install ...*
+3. convert it to Scaleway image
+  *$ make build*
 
 ---
 
-# Hello World App
+# *Hello World* Dockerfile
 
-```
+```bash
+# Inherit from the Ubuntu Trusty Scaleway image
 FROM armbuild/scw-distrib-ubuntu:trusty
-RUN /usr/local/sbin/builder-enter
+
+# Install the `cowsay` package
 RUN apt-get install -y -qq cowsay
-ADD ./patches/ /
-RUN /usr/local/sbin/builder-leave
+
+# Add local assets
+COPY ./patches/ /
 ```
 
 ---
+
+![right](assets/make-build.png)
 
 # Let's Build
 
-## $ make image
+### `$ make image`
 
-Under the hood
-
-- docker build && docker run && docker export
+```bash
+docker build && docker run && docker export
+```
 - spawns a C1 instance, export tarball to the volume and snapshot
+
+---
+
+1. port a Docker image to *ARMHF*[^1]
+[^1]: to list the ported Docker images, run: `docker search armbuild/`
+
+3. **only for distrib images**: customize/enable init scripts[^2]
+[^2]: Docker images are built to run apps, not systems, we need to (re)enable init scripts.
+
+
 
 ---
 
 # Pros :ok_hand:
 
-## can port existing images from community
+### can port existing images from community
 
-```
+```bash
 sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 ```
 
@@ -75,19 +104,27 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 
 # Pros :ok_hand:
 
-## benefit from Docker features
+### benefit from *Docker*/*Dockerfile* features
 
-- inheritance: images apps are simple and concise
-- cache: we can incrementally build our images
+- *inheritance*: images apps are simple and concise
+- *caching*: incrementally build your images
+- *debug*: drop a shell in the future image thanks to `docker run`
+- *pull/push*: sources are on GitHub, builds are on registries
 
 ---
 
+![fit right](assets/github-app-docker.png)
+
 # Pros :ok_hand:
 
-## easy to contribute
+### easy to contribute
+
+- *Dockerfile* known standard
+- **sources** & **issues** on *GitHub*
 
 ```
-$EDITOR Dockerfile && git commit -am 'Added cool feature.'
+$ nano Dockerfile
+$ git commit -am 'Added cool feature. :neckbeard:'
 ```
 
 ---
