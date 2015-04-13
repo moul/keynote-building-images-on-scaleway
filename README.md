@@ -1,4 +1,4 @@
-footer: While42 Paris - by [@moul](https://twitter.com/moul) & [@aimxhaisse](https://twitter.com/aimxhaisse)
+footer: *while42* Paris #13 *(14/04/14)* - by [@moul](https://twitter.com/moul) & [@aimxhaisse](https://twitter.com/aimxhaisse)
 slidenumbers: true
 
 # [fit] Building images for **Scaleway**
@@ -80,7 +80,7 @@ COPY ./patches/ /
 
 # Let's Build
 
-### `$ make image`
+### `$ make build`
 
 ```bash
 docker build && docker run && docker export
@@ -89,11 +89,16 @@ docker build && docker run && docker export
 
 ---
 
+# Advanced: Port a base image (i.e. distrib)
+
 1. port a Docker image to *ARMHF*[^1]
+2. enable init scripts[^2]
+3. `$ make build`
+4. `$ make release`
+
 [^1]: to list the ported Docker images, run: `docker search armbuild/`
 
-3. **only for distrib images**: customize/enable init scripts[^2]
-[^2]: Docker images are built to run apps, not systems, we need to (re)enable init scripts.
+[^2]: Docker images aren't built to run systems, but apps -- we need to (re-)enable init scripts
 
 ---
 
