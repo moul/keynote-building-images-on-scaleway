@@ -52,7 +52,7 @@ slidenumbers: true
   *FROM my-arm-image*
 2. customize
   *RUN apt-get install ...*
-3. convert it to Scaleway image
+3. convert it to a Scaleway image
   *$ make build*
 
 ![right zoom=100%](assets/docker-image-to-scaleway-image.png)
@@ -95,8 +95,6 @@ docker build && docker run && docker export
 3. **only for distrib images**: customize/enable init scripts[^2]
 [^2]: Docker images are built to run apps, not systems, we need to (re)enable init scripts.
 
-
-
 ---
 
 # Pros :ok_hand:
@@ -116,9 +114,9 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 ### benefit from *Docker*/*Dockerfile* features
 
 - *inheritance*: images apps are simple and concise
-- *caching*: incrementally build your images
+- *caching*: incrementally build images
 - *debug*: drop a shell in the future image thanks to `docker run`
-- *pull/push*: sources are on GitHub, builds are on registries
+- *pull/push*: sources are on GitHub, buils are on registries
 
 ---
 
@@ -128,8 +126,8 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 
 ### easy to contribute
 
-- *Dockerfile* known standard
-- **sources** & **issues** on *GitHub*
+- *Dockerfile* is a known standard
+- **sources** & **issues** are on *GitHub*
 
 ```
 $ nano Dockerfile
