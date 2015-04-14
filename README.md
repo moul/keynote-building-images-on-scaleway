@@ -82,23 +82,11 @@ COPY ./patches/ /
 
 ### `$ make build`
 
-```bash
-docker build && docker run && docker export
-```
+- docker build, run, export
+
+### `$ make image`
+
 - spawns a C1 instance, export tarball to the volume and snapshot
-
----
-
-# Advanced: Port a base image (i.e. distrib)
-
-1. port a Docker image to *ARMHF*[^1]
-2. enable init scripts[^2]
-3. `$ make build`
-4. `$ make release`
-
-[^1]: to list the ported Docker images, run: `docker search armbuild/`
-
-[^2]: Docker images aren't built to run systems, but apps -- we need to (re-)enable init scripts
 
 ---
 
@@ -120,7 +108,7 @@ sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 
 - *inheritance*: images apps are simple and concise
 - *caching*: incrementally build images
-- *debug*: drop a shell in the future image thanks to `docker run`
+- *debug*: drop a shell in the image thanks to `docker run`
 - *pull/push*: sources are on GitHub, builds are on registries
 
 ---
@@ -154,3 +142,6 @@ $ git commit -am 'Added cool feature. :neckbeard:'
 scaleway.com
 github.com/scaleway
 twitter.com/scaleway
+
+{twitter,github}.com/moul <m@42.am>
+{twitter,github}.com/aimxhaisse <mxs@sbrk.org>
