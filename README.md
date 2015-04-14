@@ -7,7 +7,6 @@ slidenumbers: true
 
 ---
 
-![](assets/image-board.jpg)
 ![right fit](assets/node.png)
 
 # Who We Are
