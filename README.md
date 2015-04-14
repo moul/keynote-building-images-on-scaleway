@@ -21,10 +21,6 @@ slidenumbers: true
 
 ---
 
-![](https://www.youtube.com/watch?feature=player_detailpage&autoplay=1&v=XFhgSKNJP2s#t=65)
-
----
-
 # Example of images
 
 - *distrib images*: Ubuntu, Debian, Fedora, Arch Linux, Gentoo, Alpine Linux ...
