@@ -22,7 +22,7 @@ slidenumbers: true
 
 ---
 
-![](https://www.youtube.com/watch?v=XFhgSKNJP2s)
+![](https://www.youtube.com/watch?feature=player_detailpage&autoplay=1&v=XFhgSKNJP2s#t=65)
 
 ---
 
