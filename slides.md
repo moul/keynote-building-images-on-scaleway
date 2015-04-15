@@ -87,11 +87,13 @@ COPY ./patches/ /
 
 # Pros :ok_hand:
 
-### can port existing images from community
+### can port existing images from community[^1]
 
 ```bash
 sed -i 's/^FROM .*$/FROM armbuild/scw-distrib-ubuntu:trusty/' Dockerfile
 ```
+
+[^1]: github.com/moul/port-docker-image
 
 ---
 
