@@ -1,7 +1,12 @@
-# keynote-while42-scaleway-image-builder
-Keynote support for while42 Paris#13 - Scaleway
+# keynote-building-images-on-scaleway
 
-Slideshare link: http://www.slideshare.net/manfredtouron/while42-paris13-scaleway
+## while42 Paris#13
+
+- Slideshare link: http://www.slideshare.net/manfredtouron/while42-paris13-scaleway
+
+## Scaleway Meetup (#1)
+
+- Links to come
 
 ## LICENSE
 CC [@moul](https://github.com/moul), [@aimxhaisse](https://github.com/aimxhaisse)
